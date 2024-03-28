@@ -15,9 +15,9 @@ html {
   gap: 5px;
 }
 .span12{grid-area:span12; background-color: #8892e2;}
-.span6{grid-area:span12; background-color: #8892e2;}
-.span3{grid-area:span12; background-color: #8892e2;}
-.span1{grid-area:span12; background-color: #8892e2;}
+.span6{grid-area:span6; background-color: #8892e2;}
+.span3{grid-area:span3; background-color: #8892e2;}
+.span1{grid-area:span1; background-color: #8892e2;}
 /* 3x3 */
 .layout2{
    border: 2px solid #000000;
@@ -187,7 +187,7 @@ html {
   transform: rotate(20deg);
 }
 /* Rotate X Method */
-#rotateX: hover{
+#rotateX:hover{
   transform: rotateX(180deg);
 }
 /* Rotate Y method */
@@ -221,13 +221,225 @@ html {
 /* Matrix Method */
 /*matrix(scaleX, skewY, SkewX, scaleY, translateX, translateY)*/
 #matrix:hover{
-transform:matrix();
+transform:matrix(1, -0.3, 0, 1, 0, 0);
+}
+#matrix2:hover{
+  transform:matrix( 1, 0, 0.5, 1, 150, 0);
+}
+#yourOwnMatrix:hover{
+  transform:matrix(3, -0.2, 1, 0, 1, 11);
 }
 /*3 D animations X, Y, Z axis */
+#threeD{
+  border: 3px dotted #8d8dce;
+  background-color: #a97998;
+}
 /*Translate 3D method*/
-/*Scale 3D method */
+#trans3D:hover{
+  /*translate3d function need x, y, z parameters*/
+  transform: translate3d(50px, 100px, 0px);
+}
+  
 /* rotate 3D method */
-/* Persepctive Method */
-/* Matrix 3D method */
-/*  */
-/* */
+/*rotate Z method*/
+#rotateZ:hover{
+  transform: rotateZ(90deg);
+}
+/*
+transition
+transition-delay
+transition-duration
+transition-property
+transition-timing-function
+*/
+#transitions{
+  border: #b54f4f;
+  background-color:#6fce82;
+}
+.box1{
+  width: 50px;
+  height: 50px;
+  background-color: #456e87;
+  border: 1px solid #a56969;
+  transition: width 2s, height 2s, background-color 2s;
+}
+#transition:hover{
+  width: 100px;
+  height: 100px; 
+  background-color: peachpuff;
+}
+
+#delay{
+  transition: width 2s;
+  transition-delay: 1s;
+}
+#delay:hover{
+  width:100px;
+}
+#duration{
+  transition: background-color 4s;
+  transition-duration: 4s;
+}
+#duration:hover{
+  background-color: #4baf84;
+}
+#property{
+  transition-property: width;
+}
+#property:hover{
+  width: 100px;
+}
+#timing{
+  transition-timing-function: linear;
+}
+#timing:hover{
+  width: 100px;
+}
+#animations{
+  background-color: #c07777;
+  border: 3px solid #5bc88a;
+}
+#animate{
+  animation-name: example;
+  animation-duration: 10s;
+}
+@keyframes example{
+  from{background-color: #6c6bae;}
+       to{background-color: #b578b5;}
+}
+#animate2{
+  animation-name: sample;
+  animation-duration: 10s;
+}
+@keyframes sample{
+  0%{background-color: #6c6bae;}
+  25%{background-color: #b578b5;}
+  50%{background-color: #61a054;}
+  75%{background-color: #60169c;}
+  100%{background-color: #9f1d44;}
+}
+
+#animate3{
+  position: relative;
+  animation-name: allOver;
+  animation-duration: 2s;
+  animation-iteration-count: 20;
+}
+@keyframes allOver{
+  0%{background-color: #6c6bae; left: 0px; top: 0px;}
+  25%{background-color: #b578b5; left: 200px; top: 0px;}
+  50%{background-color: #61a054; left: 200px; top: 200px;}
+  75%{background-color: #60169c; left: 0px; top: 200px;}
+  100%{background-color: #9f1d44; left: 0px; top: 0px;}
+}
+#iteration{
+    width: 100px;
+    height: 100px;
+    background: #72729d;
+    position: relative;
+    animation: move 3s;
+    animation-iteration-count: 3;
+  }
+@keyframes move{
+  from {top: 0px;}
+  to {top: 200px;}
+}
+#direction{
+  width: 100px;
+  height: 100px;
+  background: #a17272;
+  border: 2px solid black;
+  position: relative;
+  animation: direction 5s 2;
+  animation-direction: reverse;
+}
+@keyframes direction {
+  0%   {background: #2c83ba; left: 0px; top: 0px;}
+  25%  {background: #9c5030; left: 200px; top: 0px;}
+  50%  {background: #a95b98; left: 200px; top: 200px;}
+  75%  {background: #46ec46; left: 0px; top: 200px;}
+  100% {background: #36bf9d; left: 0px; top: 0px;}
+}
+#linear{
+  width: 100px;
+  height: 100px;
+  background: #6a6ac8;
+  position: relative;
+  animation: timing 3s infinite;
+  animation-timing-function: linear;
+  border: 2px solid black;
+  text-align: center;
+}
+#ease{
+  width: 100px;
+  height: 100px;
+  background: #00aaff;
+  position: relative;
+  animation: timing 3s infinite;
+  animation-timing-function: ease;
+  border: 2px solid black;
+  text-align: center;
+}
+#ease-in{
+  width: 100px;
+  height: 100px;
+  background: blue;
+  position: relative;
+  animation: timing 3s infinite;
+  animation-timing-function: ease-in;
+  border: 2px solid black;
+  text-align: center;
+}
+#ease-out{
+  width: 100px;
+  height: 100px;
+  background: #5c5cbc;
+  position: relative;
+  animation: timing 3s infinite;
+  animation-timing-function: ease-out;
+  border: 2px solid black;
+  text-align: center;
+}
+#ease-in-out{
+  width: 100px;
+  height: 100px;
+  background: #449235;
+  position: relative;
+  animation: timing 3s infinite;
+  animation-timing-function: ease-in-out;
+  border: 2px solid black;
+  text-align: center;
+}
+@keyframes timing {
+  from {left: 0px;}
+  to {left: 200px;}
+}
+#fill-mode{
+  width: 100px;
+  height: 100px;
+  background: #943387;
+  border: 2px dotted blanchedalmond;
+  position: relative;
+  animation: move1 3s;
+  animation-delay: 2s;
+  animation-fill-mode: backwards;
+}
+@keyframes move1{
+from {top: 0px; background-color: #a124f5;}
+to {top: 200px;}
+}
+#animation{
+  width: 100px;
+  height: 100px;
+  background: #aa7041;
+  position: relative;
+  border: 2px solid black;
+  animation: timing1 5s linear 1s infinite running;
+}
+@keyframes timing1{
+  from {left: 0px;}
+  to {left: 200px;}
+}
+body{
+  background: #71eab1;
+}
